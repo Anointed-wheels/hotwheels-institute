@@ -1,0 +1,73 @@
+/* css/ticker.css */
+
+.hcti-urgency-ticker {
+    width: 100%;
+    background: linear-gradient(90deg, #121214 0%, rgba(255, 140, 0, 0.08) 50%, #121214 100%);
+    border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+    padding: 10px 24px;
+    position: sticky;
+    top: 80px; /* Mounts perfectly flush underneath your main 80px high navbar header */
+    z-index: 990; /* Keeps it layered safely right behind dropdown menus but above page grids */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticker-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 1400px;
+}
+
+/* Blinking Alert Beacon */
+.ticker-alert-beacon {
+    width: 8px;
+    height: 8px;
+    background: var(--brand-orange);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--brand-orange);
+    animation: alertFlash 1.5s infinite ease-in-out;
+    flex-shrink: 0;
+}
+
+@keyframes alertFlash {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 14px #ff4500; }
+    100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+.ticker-text-line {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-main);
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ticker-highlight-orange {
+    color: var(--brand-orange);
+}
+
+.ticker-seat-counter-badge {
+    background: rgba(255, 140, 0, 0.15);
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-family: monospace;
+}
+
+/* Response handling for very small phone windows */
+@media (max-width: 600px) {
+    .hcti-urgency-ticker {
+        top: 70px; /* Matches collapsed responsive navigation heights if altered */
+        padding: 8px 16px;
+    }
+    .ticker-text-line {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+}
