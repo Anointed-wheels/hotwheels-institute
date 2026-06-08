@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotwheelscoder Tech Institute</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="stylesheet" href="css/pillars.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/contact-map.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/floating-chat.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>HOTWHEELSCODER</h1>
+            </div>
+
+            <div class="menu-wrapper" id="menuWrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search courses, skills...">
+                    </div>
+                    <a href="login.html" class="btn-style btn-login">Login</a>
+                    <a href="register.html" class="btn-style btn-register">Register</a>
+                </div>
+                
+                <div id="mobileSubnavContainer"></div>
+            </div>
+
+            <div class="nav-controls" style="display: flex; align-items: center; gap: 15px;">
+                <button class="theme-toggle-btn" id="themeToggle">☀️</button>
+                <button class="menu-trigger" id="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sub-nav" id="subNavbar">
+        <div class="sub-container">
+            <ul class="sub-links" id="subLinksSource">
+                <li><a href="#hero-view">Overview</a></li>
+                <li><a href="#featured-courses">Featured Skills</a></li>
+                <li><a href="#institute-values">Core Values</a></li>
+                <li><a href="#faq-section">FAQs</a></li>
+            </ul>
+            <div class="ai-badge" id="aiAssistantTrigger">💡 Ask HCTI AI</div>
+        </div>
+    </div>
+
+    <main>
+        <section id="hero-view" class="hero-section">
+            <div class="hero-container">
+                
+                <div class="hero-content">
+                    <div class="hero-badge">⚡ Next Generation Tech Skill Training</div>
+                    <h1 class="hero-title">
+                        Empowering Minds,<br> 
+                        <span class="accent-orange">Powering</span> Possibilities, <br>
+                        Building <span class="accent-blue">Top Software Creators</span>
+                    </h1>
+                    <p class="hero-description">
+                        Acquire premium, in-demand technical skills at Hotwheelscoder Tech Institute. 
+                        From advanced frontend layouts to robust python backend engineering, learn the real-world architectures built for scale.
+                    </p>
+                    <div class="hero-action-group">
+                        <a href="#featured-courses" class="btn-hero btn-hero-primary">Explore Skills Track</a>
+                        <a href="register.html" class="btn-hero btn-hero-secondary">Apply Online Now</a>
+                    </div>
+                </div>
+
+                <div class="hero-viewer">
+                    <div class="slide-frame active">
+                        <div class="slide-placeholder-text">
+                            [ Image Canvas Placeholder 1: <br> Interactive Classroom Setup ]
+                        </div>
+                    </div>
+                    <div class="slide-frame">
+                        <div class="slide-placeholder-text">
+                            [ Image Canvas Placeholder 2: <br> Backend Engineers Coding System Components ]
+                        </div>
+                    </div>
+                    <div class="slide-frame">
+                        <div class="slide-placeholder-text">
+                            [ Image Canvas Placeholder 3: <br> Convocation and Global Certification Ceremonies ]
+                        </div>
+                    </div>
+
+                    <div class="slide-indicators" id="dotGroup"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-grid">
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-target="500">0<span class="stat-suffix">+</span></div>
+                    <p class="stat-label">Graduated Creators</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" data-target="12">0<span class="stat-suffix">+</span></div>
+                    <p class="stat-label">Expert Mentors</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" data-target="96">0<span class="stat-suffix">%</span></div>
+                    <p class="stat-label">Employment Rate</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" data-target="5">0<span class="stat-suffix">M+</span></div>
+                    <p class="stat-label">Student Projects Funded</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="featured-courses" class="courses-section">
+            <div class="section-header">
+                <p class="section-subtitle">Explore Our Specializations</p>
+                <h2 class="section-title">In-Demand Technical Pathways</h2>
+            </div>
+
+            <div class="courses-grid">
+                
+                <div class="course-card">
+                    <div class="course-image-wrapper">
+                        <span>[ Graphic Asset: Backend Architecture / Python ]</span>
+                        </div>
+                    <div class="course-meta">
+                        <span class="track-badge">Architecture</span>
+                        <span class="track-duration">16 Weeks</span>
+                    </div>
+                    <h3>Backend Software Engineering</h3>
+                    <p>
+                        Master structural application development. Build industrial-scale servers, configure advanced databases, 
+                        and construct secure API systems using Python, Django REST Framework, and robust server deployments.
+                    </p>
+                    <div class="course-info-footer">
+                        <div class="info-item">
+                            <span class="info-label">Level</span>
+                            <span class="info-value">Beginner to Pro</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Format</span>
+                            <span class="info-value">Hybrid Track</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-course-view">View Curriculum Track</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image-wrapper">
+                        <span>[ Graphic Asset: UI Components / Vanilla JS ]</span>
+                    </div>
+                    <div class="course-meta">
+                        <span class="track-badge">UI & Development</span>
+                        <span class="track-duration">12 Weeks</span>
+                    </div>
+                    <h3>Advanced Frontend Engineering</h3>
+                    <p>
+                        Craft ultra-responsive, stunning visual software components. Transition from core semantic vanilla HTML, CSS, 
+                        and modular JavaScript logic straight into building reactive modern user portal architectures.
+                    </p>
+                    <div class="course-info-footer">
+                        <div class="info-item">
+                            <span class="info-label">Level</span>
+                            <span class="info-value">Beginner to Pro</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Format</span>
+                            <span class="info-value">Physical Hub</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-course-view">View Curriculum Track</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image-wrapper">
+                        <span>[ Graphic Asset: System Scaling / Full Stack ]</span>
+                    </div>
+                    <div class="course-meta">
+                        <span class="track-badge">Full Stack</span>
+                        <span class="track-duration">24 Weeks</span>
+                    </div>
+                    <h3>Full Stack Software Mastery</h3>
+                    <p>
+                        Bridge the gap between frontend styling and backend architectures. Learn to design, develop, deploy, 
+                        and scale entire tech institute platforms, online systems, and complete startup SaaS solutions.
+                    </p>
+                    <div class="course-info-footer">
+                        <div class="info-item">
+                            <span class="info-label">Level</span>
+                            <span class="info-value">Advanced Tech</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Format</span>
+                            <span class="info-value">Full Immersive</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-course-view">View Curriculum Track</a>
+                </div>
+
+            </div>
+
+            <div class="section-cta-wrapper">
+                <a href="courses.html" class="btn-view-all">
+                    <span>View All Professional Courses</span>
+                    <span style="font-size: 18px;">➔</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="institute-values" class="pillars-section">
+            <div class="pillars-grid">
+                
+                <div class="pillars-sticky-left">
+                    <div class="section-header" style="margin-bottom: 0;">
+                        <p class="section-subtitle">Our Competitive Edge</p>
+                        <h2 class="section-title">Why Hotwheelscoder Tech Institute Stands Supreme</h2>
+                    </div>
+                    
+                    <div class="pillars-image-placeholder">
+                        <span>[ Interactive Tech Hub / Campus Lab Photography Mockup ]</span>
+                    </div>
+                </div>
+
+                <div class="pillars-stack">
+                    
+                    <div class="pillar-item-card">
+                        <div class="pillar-icon-zone">🚀</div>
+                        <div class="pillar-text-content">
+                            <h3>Project-Driven Startup Curriculum</h3>
+                            <p>
+                                We don't believe in boring textbook theories. Our students don't just solve isolated puzzles—they architecture, build, 
+                                and deploy fully functioning software applications from the ground up, preparing them directly for industry workflows.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item-card">
+                        <div class="pillar-icon-zone">👨‍💻</div>
+                        <div class="pillar-text-content">
+                            <h3>Industry-Active Expert Faculty</h3>
+                            <p>
+                                Learn alongside real-world engineers who write components for scalable products daily. Our instructors are tech leaders, 
+                                python backend architects, and user experience experts committed to providing elite-tier technical mentorship.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item-card">
+                        <div class="pillar-icon-zone">🏢</div>
+                        <div class="pillar-text-content">
+                            <h3>Modern Physical Tech Ecosystem</h3>
+                            <p>
+                                Gain complete access to an immersive physical innovation hub configured with modern technical facilities, 
+                                constant power configurations, ultra-fast internet paths, and a focused programming environment built for focus.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item-card">
+                        <div class="pillar-icon-zone">🏆</div>
+                        <div class="pillar-text-content">
+                            <h3>Global Certifications & Career Placement</h3>
+                            <p>
+                                Graduate with robust, authentic industry-mapped credentials. Our dedicated tech placement cell works actively with you 
+                                to optimize your technical portfolio, master intense code interviews, and transition directly into career opportunities.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="learning-model" class="timeline-section">
+            <div class="section-header" style="text-align: center;">
+                <p class="section-subtitle">The Student Journey</p>
+                <h2 class="section-title">Your Technical Transformation Map</h2>
+            </div>
+
+            <div class="timeline-track-container">
+                
+                <div class="timeline-node">
+                    <div class="node-number-sphere">01</div>
+                    <div class="node-content-card">
+                        <h3>Select Track & Enrol</h3>
+                        <p>Choose your professional career track pathway. Lock down registration details online or access our physical learning center hub safely.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-node">
+                    <div class="node-number-sphere">02</div>
+                    <div class="node-content-card">
+                        <h3>Immersive Training</h3>
+                        <p>Dive deep into collaborative development sessions, build real program logic, and master advanced syntax blocks under live mentorship.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-node">
+                    <div class="node-number-sphere">03</div>
+                    <div class="node-content-card">
+                        <h3>Capstone Project</h3>
+                        <p>Deploy fully custom software products. Solve production-grade challenges and architecture a live portfolio optimized for global standards.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-node">
+                    <div class="node-number-sphere">04</div>
+                    <div class="node-content-card">
+                        <h3>Graduate & Deploy</h3>
+                        <p>Secure premium institute credentials. Access career networking cells, defeat technical code interviews, and step out onto the job field.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="team-hub" class="team-section">
+            <div class="section-header" style="text-align: center;">
+                <p class="section-subtitle">The Innovators</p>
+                <h2 class="section-title">Meet The HCTI Core Brain Trust</h2>
+            </div>
+
+            <div class="team-filter-bar">
+                <button class="filter-btn active" data-filter="all">All Ecosystem</button>
+                <button class="filter-btn" data-filter="admin">Administration</button>
+                <button class="filter-btn" data-filter="tech">Technical Faculty</button>
+            </div>
+
+            <div class="team-grid" id="teamGrid">
+                
+                <div class="team-card" data-dept="admin">
+                    <div class="avatar-frame">
+                        <span>[ Headshot 1 ]</span>
+                    </div>
+                    <h3 class="member-name">Lead Architect</h3>
+                    <p class="member-role">Founder & Chief Director</p>
+                    <div class="member-tags">
+                        <span class="tag-pill">Operations</span>
+                        <span class="tag-pill">System Strategy</span>
+                    </div>
+                    <div class="member-socials">
+                        <a href="#" class="social-hook-icon">LinkedIn</a>
+                        <a href="#" class="social-hook-icon">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="team-card" data-dept="tech">
+                    <div class="avatar-frame">
+                        <span>[ Headshot 2 ]</span>
+                    </div>
+                    <h3 class="member-name">Senior Dev Analyst</h3>
+                    <p class="member-role">Backend Track Lead</p>
+                    <div class="member-tags">
+                        <span class="tag-pill">Python</span>
+                        <span class="tag-pill">Django REST</span>
+                        <span class="tag-pill">PostgreSQL</span>
+                    </div>
+                    <div class="member-socials">
+                        <a href="#" class="social-hook-icon">LinkedIn</a>
+                        <a href="#" class="social-hook-icon">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="team-card" data-dept="tech">
+                    <div class="avatar-frame">
+                        <span>[ Headshot 3 ]</span>
+                    </div>
+                    <h3 class="member-name">UI Interface Engineer</h3>
+                    <p class="member-role">Frontend Track Lead</p>
+                    <div class="member-tags">
+                        <span class="tag-pill">Vanilla JS</span>
+                        <span class="tag-pill">CSS Architect</span>
+                        <span class="tag-pill">Web Systems</span>
+                    </div>
+                    <div class="member-socials">
+                        <a href="#" class="social-hook-icon">LinkedIn</a>
+                        <a href="#" class="social-hook-icon">GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="section-header" style="text-align: center;">
+                <p class="section-subtitle">Alumni Proof</p>
+                <h2 class="section-title">Stories From Our Graduated Creators</h2>
+            </div>
+
+            <div class="carousel-window">
+                <div class="carousel-track" id="carouselTrack">
+                    
+                    <div class="testimonial-slide">
+                        <div class="student-avatar-box">
+                            <span>[ Photo Asset: Graduate 1 ]</span>
+                            <div class="quote-decoration-mark">“</div>
+                        </div>
+                        <div class="student-review-content">
+                            <div class="star-rating-row">★★★★★</div>
+                            <p class="review-text-block">
+                                "Enrolling here completely altered my career trajectory. The project-driven classes forced me to understand backend structures under production load. I went from zero scripting knowledge to deploying full architectures."
+                            </p>
+                            <h4 class="student-meta-name">Tunde O.</h4>
+                            <span class="student-meta-track">Backend Track Graduate</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="student-avatar-box">
+                            <span>[ Photo Asset: Graduate 2 ]</span>
+                            <div class="quote-decoration-mark">“</div>
+                        </div>
+                        <div class="student-review-content">
+                            <div class="star-rating-row">★★★★★</div>
+                            <p class="review-text-block">
+                                "The physical hub access was a game-changer for me. Constant power, fast web access, and instructors sitting right next to you to help debug your code. The UI training is elite level."
+                            </p>
+                            <h4 class="student-meta-name">Chioma A.</h4>
+                            <span class="student-meta-track">Frontend Track Graduate</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="arrow-control-btn" id="prevBtn">❮</button>
+                <button class="arrow-control-btn" id="nextBtn">❯</button>
+            </div>
+        </section>
+
+        <section id="homepage-faq" class="faq-section">
+            <div class="section-header" style="text-align: center;">
+                <p class="section-subtitle">Got Questions?</p>
+                <h2 class="section-title">Frequently Asked Inquiries</h2>
+            </div>
+
+            <div class="faq-container">
+                
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">Do I need a personal laptop before registering for classes?</h3>
+                        <div class="faq-icon-indicator">+</div>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-answer-inner">
+                            While having a personal laptop is highly recommended for practicing outside of class hours and coding at home, our physical hub is equipped with modern technical developer machines for students to utilize during dedicated lab training hours.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">What schedules are available for working professionals?</h3>
+                        <div class="faq-icon-indicator">+</div>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-answer-inner">
+                            We operate flexible scheduling modules. We feature intensive weekday pipelines alongside robust weekend-only immersion tracks tailored specifically for corporate workers, university students, and busy professionals.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">Does HCTI provide flexible tuition payment installments?</h3>
+                        <div class="faq-icon-indicator">+</div>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-answer-inner">
+                            Yes, absolutely. To make high-end tech education highly accessible, we offer structured tuition payment models allowing students to split their overall course fees across manageable monthly installments over the training period.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="campus-nexus" class="contact-map-section">
+            <div class="section-header" style="text-align: center;">
+                <p class="section-subtitle">Locate Our Hub</p>
+                <h2 class="section-title">Visit The HCTI Physical Innovation Center</h2>
+            </div>
+
+            <div class="nexus-grid">
+                
+                <div class="contact-info-panel">
+                    
+                    <div class="info-nexus-row">
+                        <div class="info-icon-sphere">📍</div>
+                        <div class="info-details">
+                            <h3>Campus Location</h3>
+                            <p>25' Kalejaiye, Oke-itunu, Mokola,<br>Ibadan, Oyo State, Nigeria.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-nexus-row">
+                        <div class="info-icon-sphere">✉️</div>
+                        <div class="info-details">
+                            <h3>Inquiries & SupportDesk</h3>
+                            <p>admissions@hotwheelscoder.com<br>support@hotwheelscoder.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-nexus-row">
+                        <div class="info-icon-sphere">🕒</div>
+                        <div class="info-details">
+                            <h3>Operational Hours</h3>
+                            <p>Monday – Friday: 09:00 AM – 05:00 PM<br>Saturday Tracks: 10:00 AM – 03:00 PM</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="map-frame-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Oke-itunu,%20Mokola,%20Ibadan,%20Nigeria&t=&z=15&ie=UTF-8&iwloc=&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <section id="featured-courses" style="height: 100vh; padding: 40px;"></section> -->
+
+        <!-- <section id="featured-courses" style="height: 100vh; padding: 40px;"></section> -->
+    </main>
+
+    <footer class="master-footer">
+        <div class="footer-max-width">
+            
+            <div class="footer-top-deck">
+                <div class="footer-logo-box">
+                    <div class="footer-dummy-logo">
+                        <span>🏎️</span>
+                        <span>Hotwheelscoder<span style="color: var(--brand-orange);">.</span></span>
+                    </div>
+                    <div class="status-indicator-pill">
+                        <div class="pulse-dot"></div>
+                        <span>Ibadan Campus Active</span>
+                    </div>
+                </div>
+
+                <form class="footer-newsletter-box" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter email to track syllabus releases" required>
+                    <button type="submit" class="btn-newsletter-submit">Notify Me</button>
+                </form>
+            </div>
+
+            <div class="footer-links-grid">
+                
+                <div class="footer-column">
+                    <h4>Learning Tracks</h4>
+                    <ul>
+                        <li><a href="#">Backend Engineering</a></li>
+                        <li><a href="#">Frontend Engineering</a></li>
+                        <li><a href="#">Full Stack Integration</a></li>
+                        <li><a href="#">System Engineering</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>The Institute</h4>
+                    <ul>
+                        <li><a href="#">Our Faculty Hub</a></li>
+                        <li><a href="#">Alumni Success Stories</a></li>
+                        <li><a href="#">Campus Pricing Structure</a></li>
+                        <li><a href="#">Innovation Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal & Trust Pillars</h4>
+                    <ul>
+                        <li><a href="#">Terms of Admission</a></li>
+                        <li><a href="#">Privacy Engine Protocols</a></li>
+                        <li><a href="#">CAC Registrations Info</a></li>
+                        <li><a href="#">Syllabus Standards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Ecosystem Connect</h4>
+                    <ul>
+                        <li><a href="#">GitHub Portals</a></li>
+                        <li><a href="#">LinkedIn Corporate</a></li>
+                        <li><a href="#">TikTok Developer Logs</a></li>
+                        <li><a href="#">Direct WhatsApp Desk</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-base-bar">
+                <p class="copyright-text">
+                    &copy; 2026 Hotwheelscoder Tech Institute (HCTI). All rights reserved. 
+                    Built with high-end premium performance.
+                </p>
+                <!-- <a href="#" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+                <!-- <a href="#top-viewport-anchor" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="hcti-floating-nexus">
+        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="floating-action-node node-whatsapp" title="Chat on WhatsApp">💬</a>
+        <div class="floating-action-node node-ai-trigger" id="floatingAiBtn" title="Open HCTI AI Assistant">🤖</div>
+    </div>
+
+    <div class="hcti-chat-panel" id="hctiChatPanel">
+        <div class="chat-panel-header">
+            <div class="chat-panel-title-block">
+                <h3>HCTI AI Core</h3>
+                <span class="chat-status-tag">Online</span>
+            </div>
+            <button class="btn-chat-close" id="closeChatBtn">✕</button>
+        </div>
+        
+        <div class="chat-messages-stage" id="chatMessageStage">
+            <div class="msg-bubble ai-bot">
+                Welcome to Hotwheelscoder Tech Institute! 🏎️ I am your AI Core Assistant. Ask me anything about our Ibadan campus programs, syllabus, or course durations!
+            </div>
+        </div>
+
+        <form class="chat-panel-footer-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask about Python, Front-End, Fees..." autocomplete="off" required>
+            <button type="submit" class="btn-chat-send">➔</button>
+        </form>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/team.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

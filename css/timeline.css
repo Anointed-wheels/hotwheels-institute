@@ -1,0 +1,151 @@
+/* css/timeline.css */
+
+.timeline-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    position: relative;
+}
+
+/* Master Horizontal Row Framework */
+.timeline-track-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 60px;
+    padding: 20px 0;
+}
+
+/* The Connecting Neon Track Line running behind desktop nodes */
+.timeline-track-container::before {
+    content: '';
+    position: absolute;
+    top: 55px; /* Aligns line perfectly through the center of the step numbers */
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brand-orange) 0%, var(--brand-blue) 100%);
+    opacity: 0.25;
+    z-index: 1;
+}
+
+/* Individual Chronological Node Card */
+.timeline-node {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Central Numeric Core Badge Element */
+.node-number-sphere {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: var(--bg-sidebar);
+    border: 3px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro-Interaction Flow Animation on Card Track Target */
+.timeline-node:hover {
+    transform: translateY(-8px);
+}
+
+.timeline-node:hover .node-number-sphere {
+    color: #ffffff;
+    background: var(--brand-orange);
+    border-color: #ff8c00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+}
+
+/* Alternate colors for even nodes to maintain your dynamic blend requirements */
+.timeline-node:nth-child(even):hover .node-number-sphere {
+    background: var(--brand-blue);
+    border-color: #0022ff;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+/* Internal Card Text Custom Typography layout configurations */
+.node-content-card {
+    background: var(--bg-nav-main);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    padding: 24px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-premium);
+    width: 90%;
+    transition: border-color 0.3s ease;
+}
+
+.timeline-node:hover .node-content-card {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.node-content-card h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 10px 0;
+}
+
+.node-content-card p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- MEDIA RESPONSIVENESS ADAPTATIONS --- */
+@media (max-width: 1024px) {
+    /* Collapse horizontal nodes into a clean vertical list for tablets and smaller displays */
+    .timeline-track-container {
+        flex-direction: column;
+        gap: 40px;
+        padding-left: 40px;
+    }
+    
+    /* Reposition track line to run vertically down the left margin */
+    .timeline-track-container::before {
+        top: 0;
+        left: 32px;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--brand-orange) 0%, var(--brand-blue) 100%);
+    }
+    
+    .timeline-node {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 25px;
+        width: 100%;
+    }
+    
+    .node-number-sphere {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        width: 55px;
+        height: 55px;
+        font-size: 18px;
+    }
+    
+    .node-content-card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,101 @@
+/* css/faq.css */
+
+.faq-section {
+    max-width: 900px; /* Kept narrow intentionally for clean, premium editorial reading */
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+/* Master Question Accordion Strip */
+.faq-item {
+    background: var(--bg-nav-main);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 210, 255, 0.25); /* Subtle Cyber Blue hover outline */
+    transform: translateX(4px); /* Premium horizontal nudge on hover */
+}
+
+/* Header Trigger Bar Row */
+.faq-header {
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-question {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+    padding-right: 20px;
+}
+
+/* Dynamic State Tracking Indicator Cross */
+.faq-icon-indicator {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ff8c00; /* Brand Orange Accordion Accent */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* --- COLLAPSIBLE SHIELD PANEL MATRIX --- */
+.faq-body {
+    max-height: 0; /* Hidden completely by default */
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.faq-answer-inner {
+    padding: 0 30px 24px 30px;
+    border-top: 1px solid transparent;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- ACTIVE STATE TOGGLE STYLING --- */
+.faq-item.active {
+    border-color: rgba(255, 140, 0, 0.25); /* Shifts layout to Brand Orange frame when expanded */
+}
+
+.faq-item.active .faq-icon-indicator {
+    transform: rotate(45deg); /* Rotates cross sign cleanly into a minus icon */
+    color: #00d2ff; /* Swaps icon coloring over to Cyber Blue */
+}
+
+.faq-item.active .faq-body {
+    opacity: 1;
+}
+
+/* --- MEDIA RESPONSIVENESS ADJUSTMENTS --- */
+@media (max-width: 600px) {
+    .faq-header {
+        padding: 20px;
+    }
+    .faq-answer-inner {
+        padding: 0 20px 20px 20px;
+    }
+    .faq-question {
+        font-size: 15px;
+    }
+}

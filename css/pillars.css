@@ -1,0 +1,142 @@
+/* css/pillars.css */
+
+.pillars-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* --- LEFT COLUMN: STICKY BRAND CONTEXT --- */
+.pillars-sticky-left {
+    position: sticky;
+    top: 140px; /* Accounts for dual-sticky navigation header height */
+}
+
+.pillars-sticky-left .section-title {
+    margin-bottom: 25px;
+}
+
+/* DUMMY ASSET FRAMEWORK FOR THE PILLARS SECTION */
+.pillars-image-placeholder {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.05) 0%, rgba(0, 210, 255, 0.05) 100%);
+    border: 1px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pillars-image-placeholder span {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- RIGHT COLUMN: INTERACTIVE PILLAR CARDS --- */
+.pillars-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pillar-item-card {
+    background: var(--bg-nav-main);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 14px;
+    display: flex;
+    gap: 25px;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+/* Micro-Interaction: Glow slide and crisp scaling nudge */
+.pillar-item-card:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 140, 0, 0.3); /* Brand Orange Glow Edge Accent */
+}
+
+/* Stylized Vector Icon Wrapper Block */
+.pillar-icon-zone {
+    flex-shrink: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    background: var(--animated-hover-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ff8c00;
+    transition: transform 0.3s ease;
+}
+
+.pillar-item-card:hover .pillar-icon-zone {
+    transform: rotate(-10deg) scale(1.1);
+    background: var(--brand-orange);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* Typography elements */
+.pillar-text-content h3 {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 8px 0;
+}
+
+.pillar-text-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- MEDIA RESPONSIVENESS ADJUSTMENTS --- */
+@media (max-width: 968px) {
+    .pillars-grid {
+        grid-template-columns: 1fr; /* Demolish split columns for clean stacking layout */
+        gap: 40px;
+    }
+    
+    .pillars-sticky-left {
+        position: relative;
+        top: 0; /* Kill scroll-locking tracking context safely */
+    }
+    
+    .pillars-image-placeholder {
+        height: 220px;
+    }
+}
+
+@media (max-width: 550px) {
+    .pillar-item-card {
+        flex-direction: column; /* Force stack icons above paragraphs on tight mobile viewports */
+        gap: 15px;
+        padding: 24px;
+    }
+    
+    .pillar-icon-zone {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}

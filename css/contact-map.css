@@ -1,0 +1,121 @@
+/* css/contact-map.css */
+
+.contact-map-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.nexus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    margin-top: 40px;
+    align-items: stretch;
+}
+
+/* --- LEFT COLUMN: CORPORATE BRAND INFO --- */
+.contact-info-panel {
+    background: var(--bg-nav-main);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.info-nexus-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Custom Vector Detail Bullet Zone */
+.info-icon-sphere {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: rgba(255, 140, 0, 0.06); /* Brand Orange Light Base */
+    border: 1px solid rgba(255, 140, 0, 0.15);
+    color: #ff8c00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-nexus-row:nth-child(even) .info-icon-sphere {
+    background: rgba(0, 210, 255, 0.06); /* Alternates to Brand Blue Style */
+    border: 1px solid rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+}
+
+.info-details h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-details p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- RIGHT COLUMN: LIVE EMBEDDED MAP CONTAINER --- */
+.map-frame-wrapper {
+    background: var(--bg-nav-main);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: var(--shadow-premium);
+    overflow: hidden;
+    min-height: 400px;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.map-frame-wrapper:hover {
+    border-color: rgba(0, 210, 255, 0.3); /* Premium glow focus trace */
+}
+
+.map-frame-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border-radius: 10px;
+    border: none;
+    /* Clean dark-blend filtering overlay strictly applied under active dark mode contexts */
+    filter: grayscale(0.2) contrast(1.1);
+}
+
+:root[data-theme="dark"] .map-frame-wrapper iframe {
+    filter: invert(90%) hue-rotate(180deg) grayscale(0.5) contrast(1.2);
+}
+
+/* --- MEDIA RESPONSIVENESS ADAPTATIONS --- */
+@media (max-width: 968px) {
+    .nexus-grid {
+        grid-template-columns: 1fr; /* Demolish horizontal spacing layout arrays cleanly */
+        gap: 30px;
+    }
+    .contact-info-panel {
+        padding: 30px 20px;
+    }
+    .map-frame-wrapper {
+        min-height: 350px;
+    }
+    .map-frame-wrapper iframe {
+        min-height: 350px;
+    }
+}

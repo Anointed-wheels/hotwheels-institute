@@ -1,0 +1,254 @@
+/* css/navbar.css */
+
+/* --- MAIN TIER HEADER --- */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background: var(--bg-nav-main);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h1 {
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 1.5px;
+    background: var(--brand-orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Master Menu Container */
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Crazy Background Color Hover Animation for Main Links */
+.nav-links a:not(.btn-style):hover {
+    background: var(--animated-hover-bg);
+    box-shadow: 0 4px 12px var(--border-color);
+}
+
+/* --- INTEGRATED UTILITY ACTIONS --- */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Premium Buttons */
+.btn-style {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+.btn-login {
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+.btn-register {
+    background: var(--brand-blue);
+    color: #ffffff !important;
+}
+.btn-style:hover {
+    transform: translateY(-2px);
+}
+
+/* Interactive Search Bar Panel */
+.search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.search-input {
+    width: 180px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: rgba(0,0,0,0.05);
+    color: var(--text-main);
+    font-size: 13px;
+    transition: width 0.4s ease;
+}
+:root[data-theme="dark"] .search-input {
+    background: rgba(255,255,255,0.05);
+}
+.search-input:focus {
+    width: 260px;
+    outline: none;
+    border-color: #0066ff;
+}
+
+/* --- DUAL STICKY TIER (SUB-NAVBAR) --- */
+.sub-nav {
+    position: fixed;
+    top: 65px; /* Sits perfectly underneath Main Nav */
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: var(--bg-nav-sub);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.3s ease;
+}
+
+.sub-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.sub-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+.sub-links a:hover {
+    color: var(--text-main);
+}
+
+/* Floating AI Chat Trigger Badge */
+.ai-badge {
+    margin-left: auto;
+    background: var(--brand-orange);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,69,0,0); }
+    100% { transform: scale(1.05); box-shadow: 0 0 12px rgba(255,69,0,0.4); }
+}
+
+/* Controls Header Toggles */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.menu-trigger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.menu-trigger span {
+    width: 24px;
+    height: 3px;
+    background: var(--text-main);
+    border-radius: 2px;
+}
+
+/* --- MOBILE RESPONSIVENESS CAPABILITIES --- */
+@media (max-width: 1024px) {
+    .sub-nav {
+        display: none; /* Hide standard subbar on portable dimensions */
+    }
+    .menu-trigger {
+        display: flex;
+    }
+    .menu-wrapper {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 320px;
+        height: 100vh;
+        background: var(--bg-sidebar);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 100px 30px;
+        gap: 35px;
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.2);
+    }
+    .menu-wrapper.active {
+        right: 0;
+    }
+    .nav-links, .nav-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .search-input {
+        width: 100%;
+    }
+    .search-input:focus {
+        width: 100%;
+    }
+    
+    /* Injected Dropdown Group for Mobile Side-panel */
+    .mobile-dropdown-group {
+        width: 100%;
+        border-top: 1px solid var(--border-color);
+        padding-top: 15px;
+    }
+    .mobile-dropdown-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+}

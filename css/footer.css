@@ -1,0 +1,240 @@
+/* css/footer.css */
+
+.master-footer {
+    background: var(--bg-nav-main);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-color);
+    padding: 80px 24px 30px 24px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-max-width {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   TIER 1: UPPER BRANDING & NEWSLETTER DECK
+   ========================================================================== */
+.footer-top-deck {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 50px;
+}
+
+/* Premium Logo Placeholder Graphic Box */
+.footer-logo-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-dummy-logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Premium Pulsing Hub Status Dot Indicator */
+.status-indicator-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(0, 255, 136, 0.06);
+    color: #00ff88;
+    padding: 4px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    width: fit-content;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    background: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff88;
+    animation: neonPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 14px #00ff88; }
+    100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* High-End Newsletter Box Form Input */
+.footer-newsletter-box {
+    display: flex;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 6px;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 420px;
+    transition: border-color 0.3s ease;
+}
+
+.footer-newsletter-box:focus-within {
+    border-color: rgba(0, 102, 255, 0.4);
+}
+
+.footer-newsletter-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    color: var(--text-main);
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.footer-newsletter-box input::placeholder {
+    color: var(--text-muted);
+}
+
+.btn-newsletter-submit {
+    background: var(--brand-blue);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-newsletter-submit:hover {
+    background: var(--brand-orange);
+    box-shadow: 0 4px 12px var(--glow-orange);
+}
+
+/* ==========================================================================
+   TIER 2: THE NAVIGATION WEB LINKS GRID
+   ========================================================================== */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    margin: 0 0 20px 0;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column ul li a {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-column ul li a:hover {
+    color: var(--text-main);
+    transform: translateX(4px); /* Interactive nudge slide forward */
+}
+
+/* ==========================================================================
+   TIER 3: BASE BAR & COPYRIGHT ENGINE
+   ========================================================================== */
+.footer-base-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.copyright-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.btn-back-to-top {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-back-to-top:hover {
+    border-color: var(--text-main);
+    color: var(--text-main);
+    transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   ⚡ MEDIA RESPONSIVENESS ADAPTATIONS 
+   ========================================================================== */
+@media (max-width: 968px) {
+    .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapse grid to 2x2 on tablets */
+        gap: 30px;
+    }
+    .footer-top-deck {
+        flex-direction: column; /* Stack logo above form field on tablets */
+        align-items: flex-start;
+        gap: 24px;
+    }
+    .footer-newsletter-box {
+        max-width: 100%; /* Stretch search line input fully onto available spaces */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links-grid {
+        grid-template-columns: 1fr; /* Collapse down to 1 clean column on small phones */
+        gap: 25px;
+    }
+    .footer-base-bar {
+        flex-direction: column-reverse; /* Put arrow control safely atop copy lines */
+        gap: 20px;
+        text-align: center;
+    }
+    .master-footer {
+        padding: 50px 20px 24px 20px;
+    }
+}
