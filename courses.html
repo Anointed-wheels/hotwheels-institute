@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus tracks & Admissions | HCTI</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/floating-chat.css">
+    <link rel="stylesheet" href="css/velocity-bar.css">
+    <link rel="stylesheet" href="css/courses-page.css">
+</head>
+<body id="top-viewport-anchor">
+
+    <div class="hcti-velocity-container">
+        <div class="velocity-progress-line" id="scrollProgressLine"></div>
+    </div>
+
+    <header class="main-navbar-header">
+        <div class="navbar-container">
+            <a href="index.html" class="nav-brand-logo">
+                <span>🏎️</span> HCTI<span style="color: var(--brand-orange);">.</span>
+            </a>
+            <nav class="nav-links-wrapper" id="navLinksWrapper">
+                <a href="index.html">Home</a>
+                <a href="courses.html" class="active">Syllabus Tracks</a>
+                <a href="#" id="nav-ai-link">AI Core</a>
+            </nav>
+            <div class="nav-action-cluster">
+                <button class="theme-toggle-trigger" id="themeToggleBtn" aria-label="Toggle Color Theme">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="courses-hero">
+        <p style="color: var(--brand-blue); font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Syllabus Deep-Dive</p>
+        <h1 style="font-size: clamp(28px, 4vw, 44px); font-weight: 900; color: var(--text-main); margin: 8px 0;">Architect Your Coding Career</h1>
+    </section>
+
+    <main class="courses-main-container">
+        
+        <section class="curriculum-card">
+            <div class="track-toggle-tabs">
+                <button class="track-tab-btn active" id="tabBackend">Backend Development</button>
+                <button class="track-tab-btn" id="tabFrontend">Frontend Development</button>
+            </div>
+
+            <div class="curriculum-timeline" id="curriculumTimelineStage">
+                </div>
+        </section>
+
+        <aside class="registration-sticky-sidebar">
+            <div class="admission-form-card">
+                <h3>Apply For Admission</h3>
+                <p style="font-size: 13.5px; color: var(--text-muted); margin: 0 0 25px 0;">Submit your profile metrics to lock in an active seat container.</p>
+                
+                <form id="hctiAdmissionForm">
+                    <div class="form-group">
+                        <label for="studentName">Full Legal Name</label>
+                        <input type="text" id="studentName" placeholder="e.g., Babatunde Alao" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentEmail">Email Communication Address</label>
+                        <input type="email" id="studentEmail" placeholder="name@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="targetTrack">Select Program Track Target</label>
+                        <select id="targetTrack" required>
+                            <option value="backend">Backend Track (Python / Django Framework)</option>
+                            <option value="frontend">Frontend Track (Vanilla JS / System UI)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="learningMode">Preferred Campus Learning Mode</label>
+                        <select id="learningMode" required>
+                            <option value="physical">Physical Hub Immersion (Mokola, Ibadan)</option>
+                            <option value="virtual">Virtual Online Streaming Cohort</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit-application">
+                        <span>Submit Secure Application</span>
+                        <span>➔</span>
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="master-footer" style="background: var(--bg-nav-main); border-top: 1px solid var(--border-color); padding: 40px 24px; text-align: center;">
+        <p style="font-size: 13px; color: var(--text-muted); margin: 0;">&copy; 2026 Hotwheelscoder Tech Institute. Production Ready Blueprint Stage.</p>
+    </footer>
+
+    <div class="hcti-floating-nexus">
+        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="floating-action-node node-whatsapp">💬</a>
+        <div class="floating-action-node node-ai-trigger" id="floatingAiBtn">🤖</div>
+    </div>
+
+    <div class="hcti-chat-panel" id="hctiChatPanel">
+        <div class="chat-panel-header">
+            <div class="chat-panel-title-block"><h3>HCTI AI Core</h3><span class="chat-status-tag">Online</span></div>
+            <button class="btn-chat-close" id="closeChatBtn">✕</button>
+        </div>
+        <div class="chat-messages-stage" id="chatMessageStage">
+            <div class="msg-bubble ai-bot">Ask me any questions about our specific course tracks or pricing installments!</div>
+        </div>
+        <form class="chat-panel-footer-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type data request..." required>
+            <button type="submit" class="btn-chat-send">➔</button>
+        </form>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/velocity.js"></script>
+    <script src="js/registration.js"></script>
+</body>
+</html>

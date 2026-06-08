@@ -1,0 +1,184 @@
+/* css/courses-page.css */
+
+.courses-hero {
+    padding: 140px 24px 60px 24px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0, 210, 255, 0.03) 0%, transparent 100%);
+}
+
+.courses-main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px 24px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+}
+
+/* ==========================================================================
+   CURRICULUM EXPLORER ACCORDION STYLES
+   ========================================================================== */
+.curriculum-card {
+    background: var(--bg-nav-main);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--shadow-premium);
+}
+
+.track-toggle-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.track-tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.track-tab-btn.active {
+    background: rgba(0, 210, 255, 0.08);
+    border-color: rgba(0, 210, 255, 0.2);
+    color: var(--brand-blue);
+}
+
+.curriculum-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.syllabus-week-module {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.module-badge {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ff8c00;
+}
+
+.module-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.module-details {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================================================
+   PREMIUM APPLICATION ADMISSION FORM STYLES
+   ========================================================================== */
+.registration-sticky-sidebar {
+    position: sticky;
+    top: 150px;
+    height: fit-content;
+}
+
+.admission-form-card {
+    background: var(--bg-nav-main);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: var(--shadow-premium);
+}
+
+.admission-form-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 8px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 14px 16px;
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--brand-blue);
+}
+
+.btn-submit-application {
+    width: 100%;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-submit-application:hover {
+    background: var(--brand-orange);
+    box-shadow: 0 6px 20px var(--glow-orange);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM MEDIA ARRAYS
+   ========================================================================== */
+@media (max-width: 968px) {
+    .courses-main-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .registration-sticky-sidebar {
+        position: relative;
+        top: 0;
+    }
+}
