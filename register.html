@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create HCTI Account | Hotwheelscoder</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/courses-page.css">
+    <style>
+        .auth-container { max-width: 650px; margin: 120px auto 80px auto; padding: 0 24px; }
+        .form-row-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .optional-txt { font-size: 11px; color: var(--text-muted); font-style: italic; text-transform: initial; }
+        .step-panel { display: none; }
+        .step-panel.active { display: block; }
+        
+        /* OTP Stage Styling */
+        .otp-box-wrapper { display: flex; justify-content: center; gap: 12px; margin: 24px 0; }
+        .otp-input-field { width: 50px; height: 56px; text-align: center; font-size: 24px; font-weight: 800; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.03); color: var(--text-main); }
+        .otp-input-field:focus { border-color: var(--brand-blue); outline: none; }
+    </style>
+</head>
+<body id="top-viewport-anchor">
+
+    <main class="auth-container">
+        
+        <div class="admission-form-card step-panel active" id="signupStepBlock">
+            <h3>Create HCTI Account</h3>
+            <p style="font-size: 13.5px; color: var(--text-muted); margin: 0 0 25px 0;">Join the institute portal. Setting up an account is free.</p>
+            
+            <form id="hctiSignUpForm">
+                <div class="form-row-split">
+                    <div class="form-group">
+                        <label for="regSurname">Surname</label>
+                        <input type="text" id="regSurname" placeholder="e.g., Alao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regFirstname">First Name</label>
+                        <input type="text" id="regFirstname" placeholder="e.g., Babatunde" required>
+                    </div>
+                </div>
+
+                <div class="form-row-split">
+                    <div class="form-group">
+                        <label for="regLastname">Last Name <span class="optional-txt">(Optional)</span></label>
+                        <input type="text" id="regLastname" placeholder="e.g., Olanrewaju">
+                    </div>
+                    <div class="form-group">
+                        <label for="regAge">Age</label>
+                        <input type="number" id="regAge" min="10" max="100" placeholder="24" required>
+                    </div>
+                </div>
+
+                <div class="form-row-split">
+                    <div class="form-group">
+                        <label for="regGender">Gender</label>
+                        <select id="regGender" required>
+                            <option value="">Choose...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regMarital">Marital Status <span class="optional-txt">(Optional)</span></label>
+                        <select id="regMarital">
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row-split">
+                    <div class="form-group">
+                        <label for="regEmail">Email Address</label>
+                        <input type="email" id="regEmail" placeholder="yourname@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Phone Number</label>
+                        <input type="tel" id="regPhone" placeholder="e.g., +234..." required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="regAvatar">Profile Avatar Picture <span class="optional-txt">(Optional)</span></label>
+                    <input type="file" id="regAvatar" accept="image/*" style="padding: 10px;">
+                </div>
+
+                <div class="form-group">
+                    <label for="regCountry">Country</label>
+                    <select id="regCountry" required>
+                        <option value="">Detecting location...</option>
+                    </select>
+                </div>
+
+                <div class="form-row-split">
+                    <div class="form-group">
+                        <label for="regState">State / Region</label>
+                        <select id="regState" required disabled>
+                            <option value="">Select country first...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regTown">Town / City</label>
+                        <select id="regTown" required disabled>
+                            <option value="">Select state first...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="regGoal">Primary Coding Goal</label>
+                    <select id="regGoal" required>
+                        <option value="career-switch">Switch Careers into Tech</option>
+                        <option value="freelancing">Build a Remote Freelance Business</option>
+                        <option value="startup">Launch My Own Tech Startup</option>
+                    </select>
+                </div>
+
+                <div class="form-row-split">
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirm Password</label>
+                        <input type="password" id="regConfirmPassword" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
+                    <input type="checkbox" id="regTerms" style="width: auto; margin-top: 4px;" required>
+                    <label Skinner for="regTerms" style="text-transform: initial; font-weight: normal; font-size: 13px;">
+                        I agree to the HCTI student portal terms of service and usage regulations.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit-application" style="margin-top: 15px;">
+                    <span>Generate Security Token</span>
+                    <span>➔</span>
+                </button>
+            </form>
+            <p style="text-align: center; font-size: 14px; margin-top: 20px; color: var(--text-muted);">
+                Already have an account? <a href="login.html" style="color: var(--brand-blue); text-decoration: none; font-weight: 700;">Sign In</a>
+            </p>
+        </div>
+
+        <div class="admission-form-card step-panel" id="otpVerificationStepBlock">
+            <div style="text-align: center; margin-bottom: 25px;">
+                <span style="font-size: 44px;">✉️</span>
+                <h3 style="margin-top: 15px;">Verify Your Email</h3>
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; max-width: 400px; margin: 8px auto 0 auto;">
+                    We sent a secure <span style="color: var(--brand-orange); font-weight: 800;">6-digit verification code</span> to <span id="userTargetEmailDisplay" style="color: var(--text-main); font-weight: 700;">your email</span>. Enter it below to activate your account.
+                </p>
+            </div>
+
+            <form id="hctiOtpForm">
+                <div class="otp-box-wrapper">
+                    <input type="text" class="otp-input-field" maxlength="1" required pattern="[0-9]">
+                    <input type="text" class="otp-input-field" maxlength="1" required pattern="[0-9]">
+                    <input type="text" class="otp-input-field" maxlength="1" required pattern="[0-9]">
+                    <input type="text" class="otp-input-field" maxlength="1" required pattern="[0-9]">
+                    <input type="text" class="otp-input-field" maxlength="1" required pattern="[0-9]">
+                    <input type="text" class="otp-input-field" maxlength="1" required pattern="[0-9]">
+                </div>
+
+                <button type="submit" class="btn-submit-application">
+                    <span>Verify & Secure Account</span>
+                    <span>✓</span>
+                </button>
+            </form>
+            
+            <p style="text-align: center; font-size: 13px; margin-top: 25px; color: var(--text-muted);">
+                Didn't receive the token? <a href="#" style="color: var(--brand-orange); text-decoration: none; font-weight: 700;">Resend Code</a>
+            </p>
+        </div>
+
+    </main>
+
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

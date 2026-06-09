@@ -182,3 +182,119 @@
         top: 0;
     }
 }
+
+.courses-subnav {
+    width: 100%;
+    background: rgba(18, 18, 20, 0.8);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 80px; /* Sits completely flush below your 80px main-nav */
+    z-index: 980; /* Layers right beneath dropdown panels but cleanly stays above page columns */
+    transition: all 0.3s ease;
+}
+
+.subnav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left side indicator typography configuration */
+.subnav-program-indicator {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 6px;
+}
+
+.subnav-active-track-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--brand-blue);
+    background: rgba(0, 210, 255, 0.06);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 210, 255, 0.15);
+}
+
+/* Right side navigation metrics */
+.subnav-right-anchors {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.subnav-anchor-link {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.subnav-anchor-link:hover, .subnav-anchor-link.active {
+    color: var(--text-main);
+}
+
+/* Underline accent glow indicator */
+.subnav-anchor-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--brand-blue);
+    box-shadow: 0 0 8px var(--brand-blue);
+}
+
+/* Compact micro contextual CTA button */
+.subnav-cta-mini {
+    background: transparent;
+    border: 1px solid var(--brand-orange);
+    color: var(--brand-orange);
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 800;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.subnav-cta-mini:hover {
+    background: var(--brand-orange);
+    color: #ffffff;
+    box-shadow: 0 4px 12px var(--glow-orange);
+}
+
+/* ==========================================================================
+   ⚡ MOBILE SUB-NAV ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .subnav-left {
+        display: none; /* Hide indicator text strings to preserve space on small viewports */
+    }
+    .subnav-container {
+        justify-content: center;
+        padding: 12px 16px;
+    }
+    .subnav-right-anchors {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    .subnav-anchor-link {
+        font-size: 12px;
+    }
+    .subnav-anchor-link.active::after {
+        bottom: -14px;
+    }
+}

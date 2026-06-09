@@ -17,21 +17,55 @@
         <div class="velocity-progress-line" id="scrollProgressLine"></div>
     </div>
 
-    <header class="main-navbar-header">
-        <div class="navbar-container">
-            <a href="index.html" class="nav-brand-logo">
-                <span>🏎️</span> HCTI<span style="color: var(--brand-orange);">.</span>
-            </a>
-            <nav class="nav-links-wrapper" id="navLinksWrapper">
-                <a href="index.html">Home</a>
-                <a href="courses.html" class="active">Syllabus Tracks</a>
-                <a href="#" id="nav-ai-link">AI Core</a>
-            </nav>
-            <div class="nav-action-cluster">
-                <button class="theme-toggle-trigger" id="themeToggleBtn" aria-label="Toggle Color Theme">🌓</button>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>HCTI</h1>
+            </div>
+
+            <div class="menu-wrapper" id="menuWrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search courses, skills...">
+                    </div>
+                    <a href="login.html" class="btn-style btn-login">Login</a>
+                    <a href="register.html" class="btn-style btn-register">Register</a>
+                </div>
+                
+                <div id="mobileSubnavContainer"></div>
+            </div>
+
+            <div class="nav-controls" style="display: flex; align-items: center; gap: 15px;">
+                <button class="theme-toggle-btn" id="themeToggle">☀️</button>
+                <button class="menu-trigger" id="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-    </header>
+    </nav>
+
+    <div class="courses-subnav" id="coursesSubnav">
+        <div class="subnav-container">
+            <div class="subnav-left">
+                <span class="subnav-program-indicator">HCTI Core Tracks:</span>
+                <span class="subnav-active-track-name" id="subnavTrackIndicator">Backend Engineering</span>
+            </div>
+            
+            <div class="subnav-right-anchors">
+                <a href="#curriculum-section" class="subnav-anchor-link active" id="anchorOverview">Curriculum Overview</a>
+                <a href="#hctiAdmissionForm" class="subnav-anchor-link" id="anchorApply">Admission Form</a>
+                <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="subnav-cta-mini">Talk to Advisor</a>
+            </div>
+        </div>
+    </div>
 
     <section class="courses-hero">
         <p style="color: var(--brand-blue); font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Syllabus Deep-Dive</p>
@@ -90,10 +124,134 @@
             </div>
         </aside>
 
+
+        <section id="campus-nexus" class="contact-map-section">
+            <div class="section-header" style="text-align: center;">
+                <p class="section-subtitle">Locate Our Hub</p>
+                <h2 class="section-title">Visit The HCTI Physical Innovation Center</h2>
+            </div>
+
+            <div class="nexus-grid">
+                
+                <div class="contact-info-panel">
+                    
+                    <div class="info-nexus-row">
+                        <div class="info-icon-sphere">📍</div>
+                        <div class="info-details">
+                            <h3>Campus Location</h3>
+                            <p>25' Kalejaiye, Oke-itunu, Mokola,<br>Ibadan, Oyo State, Nigeria.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-nexus-row">
+                        <div class="info-icon-sphere">✉️</div>
+                        <div class="info-details">
+                            <h3>Inquiries & SupportDesk</h3>
+                            <p>admissions@hotwheelscoder.com<br>support@hotwheelscoder.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-nexus-row">
+                        <div class="info-icon-sphere">🕒</div>
+                        <div class="info-details">
+                            <h3>Operational Hours</h3>
+                            <p>Monday – Friday: 09:00 AM – 05:00 PM<br>Saturday Tracks: 10:00 AM – 03:00 PM</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="map-frame-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Oke-itunu,%20Mokola,%20Ibadan,%20Nigeria&t=&z=15&ie=UTF-8&iwloc=&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <footer class="master-footer" style="background: var(--bg-nav-main); border-top: 1px solid var(--border-color); padding: 40px 24px; text-align: center;">
-        <p style="font-size: 13px; color: var(--text-muted); margin: 0;">&copy; 2026 Hotwheelscoder Tech Institute. Production Ready Blueprint Stage.</p>
+
+
+    <footer class="master-footer">
+        <div class="footer-max-width">
+            
+            <div class="footer-top-deck">
+                <div class="footer-logo-box">
+                    <div class="footer-dummy-logo">
+                        <span>🏎️</span>
+                        <span>Hotwheelscoder<span style="color: var(--brand-orange);">.</span></span>
+                    </div>
+                    <div class="status-indicator-pill">
+                        <div class="pulse-dot"></div>
+                        <span>Ibadan Campus Active</span>
+                    </div>
+                </div>
+
+                <form class="footer-newsletter-box" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter email to track syllabus releases" required>
+                    <button type="submit" class="btn-newsletter-submit">Notify Me</button>
+                </form>
+            </div>
+
+            <div class="footer-links-grid">
+                
+                <div class="footer-column">
+                    <h4>Learning Tracks</h4>
+                    <ul>
+                        <li><a href="#">Backend Engineering</a></li>
+                        <li><a href="#">Frontend Engineering</a></li>
+                        <li><a href="#">Full Stack Integration</a></li>
+                        <li><a href="#">System Engineering</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>The Institute</h4>
+                    <ul>
+                        <li><a href="#">Our Faculty Hub</a></li>
+                        <li><a href="#">Alumni Success Stories</a></li>
+                        <li><a href="#">Campus Pricing Structure</a></li>
+                        <li><a href="#">Innovation Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal & Trust Pillars</h4>
+                    <ul>
+                        <li><a href="#">Terms of Admission</a></li>
+                        <li><a href="#">Privacy Engine Protocols</a></li>
+                        <li><a href="#">CAC Registrations Info</a></li>
+                        <li><a href="#">Syllabus Standards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Ecosystem Connect</h4>
+                    <ul>
+                        <li><a href="#">GitHub Portals</a></li>
+                        <li><a href="#">LinkedIn Corporate</a></li>
+                        <li><a href="#">TikTok Developer Logs</a></li>
+                        <li><a href="#">Direct WhatsApp Desk</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-base-bar">
+                <p class="copyright-text">
+                    &copy; 2026 Hotwheelscoder Tech Institute (HCTI). All rights reserved. 
+                    Built with high-end premium performance.
+                </p>
+                <!-- <a href="#" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+                <!-- <a href="#top-viewport-anchor" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+            </div>
+
+        </div>
     </footer>
 
     <div class="hcti-floating-nexus">

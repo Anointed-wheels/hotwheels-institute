@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Sign In | HCTI Portal</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/courses-page.css">
+    <style>
+        .auth-container { max-width: 480px; margin: 150px auto 80px auto; padding: 0 24px; }
+    </style>
+</head>
+<body id="top-viewport-anchor">
+
+    <main class="auth-container">
+        <div class="admission-form-card">
+            <h3>Welcome Back</h3>
+            <p style="font-size: 13.5px; color: var(--text-muted); margin: 0 0 25px 0;">Sign into your student portal terminal dashboard.</p>
+            
+            <form id="hctiLoginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="name@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="login-label-row" style="display: flex; justify-content: space-between;">
+                        <label for="loginPassword">Password</label>
+                        <a href="#" style="font-size: 12px; color: var(--brand-orange); text-decoration: none; font-weight: 700;">Forgot Password?</a>
+                    </div>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-submit-application" style="margin-top: 10px;">
+                    <span>Access Dashboard Portal</span>
+                    <span>➔</span>
+                </button>
+            </form>
+
+            <p style="text-align: center; font-size: 14px; margin-top: 25px; color: var(--text-muted);">
+                New to the platform? <a href="register.html" style="color: var(--brand-blue); text-decoration: none; font-weight: 700;">Create Account</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="js/theme.js"></script>
+    <script>
+        document.getElementById('hctiLoginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("🔒 Sign-in captured! Redirecting to your Student Dashboard View blueprint...");
+            window.location.href = "dashboard.html"; // Redirect target
+        });
+    </script>
+</body>
+</html>
