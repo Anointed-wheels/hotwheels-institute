@@ -133,14 +133,20 @@
 .form-group input, .form-group select {
     width: 100%;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.03);
+    background: #1c1c1e; /* Explicit deep charcoal fallback for dark mode */
     border: 1px solid var(--border-color);
     padding: 14px 16px;
     border-radius: 8px;
     color: var(--text-main);
     font-size: 14px;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* Ensure the dropdown list options also render with a dark background */
+.form-group select option {
+    background-color: #1c1c1e;
+    color: var(--text-main);
 }
 
 .form-group input:focus, .form-group select:focus {

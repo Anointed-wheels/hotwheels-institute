@@ -146,3 +146,23 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = "dashboard.html"; // Routes right to our next layout block blueprint
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navDashboardLink = document.getElementById('navDashboardLink');
+
+    if (navDashboardLink) {
+        navDashboardLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Simulating a backend check: look for an active login session token
+            const isUserLoggedIn = false; // We will flip this to true when logged in
+
+            if (!isUserLoggedIn) {
+                alert("🔒 Access Denied: Please log into your HCTI account first to access your student terminal console.");
+                window.location.href = "login.html";
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        });
+    }
+});
