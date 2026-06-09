@@ -14,6 +14,41 @@
 </head>
 <body id="top-viewport-anchor">
 
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>HCTI</h1>
+            </div>
+
+            <div class="menu-wrapper" id="menuWrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search courses, skills...">
+                    </div>
+                    <a href="login.html" class="btn-style btn-login">Login</a>
+                    <a href="register.html" class="btn-style btn-register">Register</a>
+                </div>
+                
+                <div id="mobileSubnavContainer"></div>
+            </div>
+
+            <div class="nav-controls" style="display: flex; align-items: center; gap: 15px;">
+                <button class="theme-toggle-btn" id="themeToggle">☀️</button>
+                <button class="menu-trigger" id="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <main class="auth-container">
         <div class="admission-form-card">
             <h3>Welcome Back</h3>
@@ -44,6 +79,102 @@
             </p>
         </div>
     </main>
+
+    <footer class="master-footer">
+        <div class="footer-max-width">
+            
+            <div class="footer-top-deck">
+                <div class="footer-logo-box">
+                    <div class="footer-dummy-logo">
+                        <span>🏎️</span>
+                        <span>Hotwheelscoder<span style="color: var(--brand-orange);">.</span></span>
+                    </div>
+                    <div class="status-indicator-pill">
+                        <div class="pulse-dot"></div>
+                        <span>Ibadan Campus Active</span>
+                    </div>
+                </div>
+
+                <form class="footer-newsletter-box" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter email to track syllabus releases" required>
+                    <button type="submit" class="btn-newsletter-submit">Notify Me</button>
+                </form>
+            </div>
+
+            <div class="footer-links-grid">
+                
+                <div class="footer-column">
+                    <h4>Learning Tracks</h4>
+                    <ul>
+                        <li><a href="#">Backend Engineering</a></li>
+                        <li><a href="#">Frontend Engineering</a></li>
+                        <li><a href="#">Full Stack Integration</a></li>
+                        <li><a href="#">System Engineering</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>The Institute</h4>
+                    <ul>
+                        <li><a href="#">Our Faculty Hub</a></li>
+                        <li><a href="#">Alumni Success Stories</a></li>
+                        <li><a href="#">Campus Pricing Structure</a></li>
+                        <li><a href="#">Innovation Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal & Trust Pillars</h4>
+                    <ul>
+                        <li><a href="#">Terms of Admission</a></li>
+                        <li><a href="#">Privacy Engine Protocols</a></li>
+                        <li><a href="#">CAC Registrations Info</a></li>
+                        <li><a href="#">Syllabus Standards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Ecosystem Connect</h4>
+                    <ul>
+                        <li><a href="#">GitHub Portals</a></li>
+                        <li><a href="#">LinkedIn Corporate</a></li>
+                        <li><a href="#">TikTok Developer Logs</a></li>
+                        <li><a href="#">Direct WhatsApp Desk</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-base-bar">
+                <p class="copyright-text">
+                    &copy; 2026 Hotwheelscoder Tech Institute (HCTI). All rights reserved. 
+                    Built with high-end premium performance.
+                </p>
+                <!-- <a href="#" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+                <!-- <a href="#top-viewport-anchor" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="hcti-floating-nexus">
+        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="floating-action-node node-whatsapp">💬</a>
+        <div class="floating-action-node node-ai-trigger" id="floatingAiBtn">🤖</div>
+    </div>
+
+    <div class="hcti-chat-panel" id="hctiChatPanel">
+        <div class="chat-panel-header">
+            <div class="chat-panel-title-block"><h3>HCTI AI Core</h3><span class="chat-status-tag">Online</span></div>
+            <button class="btn-chat-close" id="closeChatBtn">✕</button>
+        </div>
+        <div class="chat-messages-stage" id="chatMessageStage">
+            <div class="msg-bubble ai-bot">Ask me any questions about our specific course tracks or pricing installments!</div>
+        </div>
+        <form class="chat-panel-footer-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type data request..." required>
+            <button type="submit" class="btn-chat-send">➔</button>
+        </form>
+    </div>
 
     <script src="js/theme.js"></script>
     <script>
