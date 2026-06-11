@@ -181,8 +181,12 @@
     <script>
         document.getElementById('hctiLoginForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert("🔒 Sign-in captured! Redirecting to your Student Dashboard View blueprint...");
-            window.location.href = "dashboard.html"; // Redirect target
+            
+            // ⚡ Set active login token
+            localStorage.setItem('hcti_authenticated', 'true');
+            
+            alert("🔒 Sign-in successful! Redirecting to your Student Dashboard View...");
+            window.location.href = "dashboard.html";
         });
     </script>
 </body>

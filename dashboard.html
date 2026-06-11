@@ -6,78 +6,118 @@
     <title>Student Terminal Workspace | HCTI</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/courses-page.css">
 </head>
 <body>
 
-    <div class="dashboard-app-wrapper">
-        
-        <aside class="dash-sidebar">
-            <div class="sidebar-brand-block">
-                <h2>🏎️ HCTI<span>.</span></h2>
-                <span class="user-role-badge">Student Portal</span>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>HCTI</h1>
             </div>
-            
-            <nav class="sidebar-links-wrapper">
-                <a href="#" class="sidebar-link active">💻 Learning Console</a>
-                <a href="#" class="sidebar-link">📚 Course Roadmap</a>
-                <a href="#" class="sidebar-link">🚀 Code Submissions</a>
-                <a href="#" class="sidebar-link">💳 Tuition Ledger</a>
-            </nav>
 
-            <div class="sidebar-footer-user">
-                <div class="user-mini-avatar">BA</div>
-                <div class="user-mini-meta">
-                    <h4>Babatunde Alao</h4>
-                    <p>ID: 2026-0492</p>
-                </div>
-                <a href="index.html" class="btn-logout-icon" title="Sign Out Securely">✕</a>
-            </div>
-        </aside>
+            <div class="menu-wrapper" id="menuWrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" id="navDashboardLink">Dashboard</a></li> <li><a href="about.html">About</a></li>
+                </ul>
 
-        <main class="dash-main-content">
-            
-            <header class="workspace-header">
-                <div class="header-welcome-message">
-                    <h1>Welcome back, Chief Architect</h1>
-                    <p>Track your development metrics and engineering milestones.</p>
-                </div>
-                <div class="hub-status-container">
-                    <span class="status-indicator-dot online"></span>
-                    <p>Campus Access: <strong>Mokola Hub, Ibadan</strong></p>
-                </div>
-            </header>
-
-            <section class="metrics-dashboard-grid">
-                <div class="metric-summary-card">
-                    <h3>Overall Syllabus Progress</h3>
-                    <div class="metric-value-row">
-                        <span class="giant-stat-number">28%</span>
-                        <span class="stat-context-trend">Week 5 of 16</span>
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search courses, skills...">
                     </div>
-                    <div class="progress-track-bar-housing">
-                        <div class="progress-track-bar-fill" style="width: 28%;"></div>
-                    </div>
+                    <a href="login.html" class="btn-style btn-login">Login</a>
+                    <a href="register.html" class="btn-style btn-register">Register</a>
                 </div>
-
-                <div class="metric-summary-card">
-                    <h3>Code Labs Completed</h3>
-                    <div class="metric-value-row">
-                        <span class="giant-stat-number">4 / 12</span>
-                        <span class="stat-context-trend color-orange">Pending Review: 1</span>
-                    </div>
-                </div>
-
-                <div class="metric-summary-card">
-                    <h3>Active Code Streak</h3>
-                    <div class="metric-value-row">
-                        <span class="giant-stat-number">14 Days</span>
-                        <span class="stat-context-trend color-blue">Top 10% of Cohort</span>
-                    </div>
-                </div>
-            </section>
-
-            <div class="workspace-split-view-row">
                 
+                <div id="mobileSubnavContainer"></div>
+            </div>
+
+            <div class="nav-controls" style="display: flex; align-items: center; gap: 15px;">
+                <button class="theme-toggle-btn" id="themeToggle">☀️</button>
+                <button class="menu-trigger" id="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-app-wrapper">
+    
+    <aside class="dash-sidebar">
+        <div class="sidebar-brand-block">
+            <h2>🏎️ HCTI<span>.</span></h2>
+            <span class="user-role-badge">Student Portal</span>
+        </div>
+        
+        <nav class="sidebar-links-wrapper">
+            <a href="#" class="sidebar-link active" data-tab="learning-console">💻 Learning Console</a>
+            <a href="#" class="sidebar-link" data-tab="code-submissions">🚀 Code Submissions</a>
+            <a href="#" class="sidebar-link" data-tab="tuition-ledger">💳 Tuition Ledger</a>
+            <a href="#" class="sidebar-link" data-tab="leaderboard-arena">🏆 Leaderboard Arena</a>
+        </nav>
+
+        <div class="sidebar-footer-user">
+            <div class="user-mini-avatar">BA</div>
+            <div class="user-mini-meta">
+                <h4>Babatunde Alao</h4>
+                <p>ID: 2026-0492</p>
+            </div>
+            <a href="#" id="btnLogout" class="btn-logout-icon" title="Sign Out Securely">✕</a>
+        </div>
+    </aside>
+
+    <main class="dash-main-content">
+        
+        <header class="workspace-header">
+            <div class="header-welcome-message">
+                <h1>Welcome back, Chief Architect</h1>
+                <p>Track your development metrics and engineering milestones.</p>
+            </div>
+            <div class="hub-status-container">
+                <span class="status-indicator-dot online"></span>
+                <p>Campus Access: <strong>Mokola Hub, Ibadan</strong></p>
+            </div>
+        </header>
+
+        <section class="metrics-dashboard-grid">
+            <div class="metric-summary-card">
+                <h3>Overall Syllabus Progress</h3>
+                <div class="metric-value-row">
+                    <span class="giant-stat-number">28%</span>
+                    <span class="stat-context-trend">Week 5 of 16</span>
+                </div>
+                <div class="progress-track-bar-housing">
+                    <div class="progress-track-bar-fill" style="width: 28%;"></div>
+                </div>
+            </div>
+
+            <div class="metric-summary-card">
+                <h3>Code Labs Completed</h3>
+                <div class="metric-value-row">
+                    <span class="giant-stat-number">4 / 12</span>
+                    <span class="stat-context-trend color-orange">Pending Review: 1</span>
+                </div>
+            </div>
+
+            <div class="metric-summary-card">
+                <h3>Active Code Streak</h3>
+                <div class="metric-value-row">
+                    <span class="giant-stat-number">14 Days</span>
+                    <span class="stat-context-trend color-blue">Top 10% of Cohort</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="tab-panel active" id="learning-console">
+            <div class="workspace-split-view-row">
                 <section class="workspace-main-panel">
                     <div class="terminal-video-card">
                         <div class="video-placeholder-frame">
@@ -93,7 +133,6 @@
                 </section>
 
                 <aside class="workspace-side-panel">
-                    
                     <div class="action-dock-card">
                         <h4>Today's Resource Deck</h4>
                         <div class="resource-download-row">
@@ -105,32 +144,213 @@
                     <div class="action-dock-card" style="margin-top: 24px;">
                         <h4>Submit Code Assignment Lab</h4>
                         <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 16px 0;">Paste your verified GitHub repository link below for engineering review.</p>
-                        
                         <form id="dashSubmissionForm">
-                            <div class="dash-input-group">
-                                <input type="url" id="repoUrl" placeholder="https://github.com/yourusername/hcti-lab-5" required style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 12px; border-radius: 6px; color: var(--text-main); font-size: 13.5px; outline: none;">
-                            </div>
-                            <button type="submit" class="btn-submit-lab" style="width: 100%; background: var(--brand-blue); color: white; border: none; padding: 12px; margin-top: 12px; border-radius: 6px; font-weight: 800; cursor: pointer; transition: all 0.3s ease;">
-                                Push Code Core to Review Dock ➔
-                            </button>
+                            <input type="url" id="repoUrl" placeholder="https://github.com/yourusername/hcti-lab-5" required class="dash-dark-input">
+                            <button type="submit" class="btn-submit-lab">Push Code Core to Review Dock ➔</button>
                         </form>
                     </div>
-
                 </aside>
+            </div>
+        </div>
+
+        <div class="tab-panel" id="code-submissions">
+            <div class="action-dock-card">
+                <h4>Engineering Assignment Review Queue</h4>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Review deep-dives and modular grades provided by your code review mentors.</p>
+                
+                <table class="premium-data-table">
+                    <thead>
+                        <tr>
+                            <th>Lab ID</th>
+                            <th>Topic Blueprint Name</th>
+                            <th>Submission Link</th>
+                            <th>Review Status</th>
+                            <th>Instructor Feedback Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LAB-04</td>
+                            <td>Python Functional Dictionary Comprehensions</td>
+                            <td><a href="#" class="table-repo-link">github.com/alao/lab4</a></td>
+                            <td><span class="badge-status success">Passed</span></td>
+                            <td>Excellent algorithmic complexity notation. Your code profiles perfectly efficiently.</td>
+                        </tr>
+                        <tr>
+                            <td>LAB-05</td>
+                            <td>Django Relational Data Schemas</td>
+                            <td><a href="#" class="table-repo-link">github.com/alao/lab5</a></td>
+                            <td><span class="badge-status warning">Reviewing</span></td>
+                            <td>Currently locked in the instructor evaluation queue container...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-panel" id="tuition-ledger">
+            <div class="workspace-split-view-row">
+                <div class="action-dock-card">
+                    <h4>Financial Installment Ledger</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 25px;">Track your balance metrics and active payment plans below.</p>
+                    
+                    <div class="invoice-summary-box">
+                        <div class="invoice-metric">
+                            <span>Total Program Tuition</span>
+                            <strong>₦250,000</strong>
+                        </div>
+                        <div class="invoice-metric">
+                            <span>Total Amount Settled</span>
+                            <strong style="color: #00ff66;">₦100,000</strong>
+                        </div>
+                        <div class="invoice-metric">
+                            <span>Outstanding Balance</span>
+                            <strong style="color: var(--brand-orange);">₦150,000</strong>
+                        </div>
+                    </div>
+
+                    <button class="btn-submit-lab" style="max-width: 250px; margin-top: 10px;">Settle Next Installment Balance 💳</button>
+                </div>
+
+                <div class="action-dock-card">
+                    <h4>Receipt Logs</h4>
+                    <ul class="receipt-list-group">
+                        <li>
+                            <span>Receipt #HCTI-9821 (Deposit)</span>
+                            <strong style="color: #00ff66;">₦100,000</strong>
+                        </td>
+                        <li style="border-color: transparent; padding-bottom: 0; color: var(--text-muted); font-style: italic;">
+                            Next installment invoice due: July 15, 2026.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-panel" id="leaderboard-arena">
+            <div class="action-dock-card">
+                <h4>HCTI Active Cohort Ranking Arena</h4>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Rankings update dynamically in real time based on active code streaks and repository review scores.</p>
+                
+                <table class="premium-data-table">
+                    <thead>
+                        <tr>
+                            <th>Rank Position</th>
+                            <th>Student Developer Engine</th>
+                            <th>Current Program Track</th>
+                            <th>Code Streak Metric</th>
+                            <th>Aggregated Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="rank-highlight">
+                            <td>🥇 1st Place</td>
+                            <td>Chidi Chukwuma</td>
+                            <td>Backend Engineering</td>
+                            <td>32 Days Non-stop</td>
+                            <td>2,450 XP</td>
+                        </tr>
+                        <tr class="rank-highlight">
+                            <td>🥈 2nd Place</td>
+                            <td>Aisha Yusuf</td>
+                            <td>Frontend Engineering</td>
+                            <td>28 Days Non-stop</td>
+                            <td>2,100 XP</td>
+                        </tr>
+                        <tr style="background: rgba(0, 210, 255, 0.04); border: 1px solid var(--brand-blue);">
+                            <td>⚡ 5th Place</td>
+                            <td><strong>Babatunde Alao (You)</strong></td>
+                            <td>Backend Engineering</td>
+                            <td>14 Days Non-stop</td>
+                            <td>1,650 XP</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer class="master-footer">
+        <div class="footer-max-width">
+            
+            <div class="footer-top-deck">
+                <div class="footer-logo-box">
+                    <div class="footer-dummy-logo">
+                        <span>🏎️</span>
+                        <span>Hotwheelscoder<span style="color: var(--brand-orange);">.</span></span>
+                    </div>
+                    <div class="status-indicator-pill">
+                        <div class="pulse-dot"></div>
+                        <span>Ibadan Campus Active</span>
+                    </div>
+                </div>
+
+                <form class="footer-newsletter-box" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter email to track syllabus releases" required>
+                    <button type="submit" class="btn-newsletter-submit">Notify Me</button>
+                </form>
+            </div>
+
+            <div class="footer-links-grid">
+                
+                <div class="footer-column">
+                    <h4>Learning Tracks</h4>
+                    <ul>
+                        <li><a href="#">Backend Engineering</a></li>
+                        <li><a href="#">Frontend Engineering</a></li>
+                        <li><a href="#">Full Stack Integration</a></li>
+                        <li><a href="#">System Engineering</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>The Institute</h4>
+                    <ul>
+                        <li><a href="#">Our Faculty Hub</a></li>
+                        <li><a href="#">Alumni Success Stories</a></li>
+                        <li><a href="#">Campus Pricing Structure</a></li>
+                        <li><a href="#">Innovation Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal & Trust Pillars</h4>
+                    <ul>
+                        <li><a href="#">Terms of Admission</a></li>
+                        <li><a href="#">Privacy Engine Protocols</a></li>
+                        <li><a href="#">CAC Registrations Info</a></li>
+                        <li><a href="#">Syllabus Standards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Ecosystem Connect</h4>
+                    <ul>
+                        <li><a href="#">GitHub Portals</a></li>
+                        <li><a href="#">LinkedIn Corporate</a></li>
+                        <li><a href="#">TikTok Developer Logs</a></li>
+                        <li><a href="#">Direct WhatsApp Desk</a></li>
+                    </ul>
+                </div>
 
             </div>
 
-        </main>
-    </div>
+            <div class="footer-base-bar">
+                <p class="copyright-text">
+                    &copy; 2026 Hotwheelscoder Tech Institute (HCTI). All rights reserved. 
+                    Built with high-end premium performance.
+                </p>
+                <!-- <a href="#" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+                <!-- <a href="#top-viewport-anchor" class="btn-back-to-top" title="Scroll To Top">▲</a> -->
+            </div>
 
-    <script>
-        // Inline layout handling for client demonstration verification
-        document.getElementById('dashSubmissionForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const repo = document.getElementById('repoUrl').value;
-            alert(`🚀 Code Core Dispatched!\n\nYour repository repository link:\n[${repo}]\nhas been funneled straight into the Instructor Review Queue Model.`);
-            document.getElementById('repoUrl').value = '';
-        });
-    </script>
+        </div>
+    </footer>
+
+    </main>
+</div>
+
+
+
+<script src="js/dashboard-engine.js"></script>
 </body>
 </html>

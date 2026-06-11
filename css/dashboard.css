@@ -260,3 +260,126 @@ body {
     .metrics-dashboard-grid { grid-template-columns: 1fr; }
     .workspace-split-view-row { grid-template-columns: 1fr; }
 }
+
+/* css/dashboard.css Extensions - Data Tables, Invoices, and Tab Panels */
+
+/* Tab Switching Structural Layout Engine */
+.tab-panel {
+    display: none;
+    animation: fadeInTab 0.3s ease forwards;
+}
+.tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Premium Dark UI Table Framework */
+.premium-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.premium-data-table th {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.premium-data-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+.table-repo-link {
+    color: var(--brand-blue);
+    text-decoration: none;
+    font-weight: 700;
+}
+.table-repo-link:hover { text-decoration: underline; }
+
+/* Status Badges */
+.badge-status {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.badge-status.success { background: rgba(0, 255, 102, 0.1); color: #00ff66; border: 1px solid rgba(0, 255, 102, 0.2); }
+.badge-status.warning { background: rgba(255, 140, 0, 0.1); color: var(--brand-orange); border: 1px solid rgba(255, 140, 0, 0.2); }
+
+/* Financial Ledger Component Grid Boxes */
+.invoice-summary-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.invoice-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.invoice-metric span { font-size: 12px; color: var(--text-muted); }
+.invoice-metric strong { font-size: 18px; font-weight: 800; }
+
+.receipt-list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.receipt-list-group li {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13.5px;
+}
+
+/* Input Overhauls */
+.dash-dark-input {
+    width: 100%; 
+    box-sizing: border-box; 
+    background: rgba(0,0,0,0.2); 
+    border: 1px solid var(--border-color); 
+    padding: 12px; 
+    border-radius: 6px; 
+    color: var(--text-main); 
+    font-size: 13.5px; 
+    outline: none;
+    transition: border-color 0.2s;
+}
+.dash-dark-input:focus { border-color: var(--brand-blue); }
+
+.btn-submit-lab {
+    width: 100%; 
+    background: var(--brand-blue); 
+    color: white; 
+    border: none; 
+    padding: 12px; 
+    margin-top: 12px; 
+    border-radius: 6px; 
+    font-weight: 800; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+}
+
+/* Gamified Leaderboard Accents */
+.rank-highlight { background: rgba(255, 255, 255, 0.01); }

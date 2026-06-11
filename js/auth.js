@@ -166,3 +166,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Inside js/auth.js -> otpForm event listener...
+    otpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let enteredCode = "";
+        otpInputs.forEach(input => enteredCode += input.value);
+
+        // ⚡ SIMULATE ACTIVE LOGIN SESSION IN BROWSER STORAGE
+        localStorage.setItem('hcti_authenticated', 'true');
+
+        alert(`✓ Token ${enteredCode} Verified Successfully!\n\nRedirecting to your student dashboard interface...`);
+        
+        window.location.href = "dashboard.html"; 
+    });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navDashboardLink = document.getElementById('navDashboardLink');
+
+    if (navDashboardLink) {
+        navDashboardLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Check browser storage to see if the user successfully passed our OTP sign-up
+            const isUserLoggedIn = localStorage.getItem('hcti_authenticated') === 'true';
+
+            if (!isUserLoggedIn) {
+                alert("🔒 Access Protected: Please create an account or log in first to access your student terminal workspace.");
+                window.location.href = "login.html";
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        });
+    }
+});
