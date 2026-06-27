@@ -52,8 +52,8 @@
     position: fixed;
     bottom: 105px;
     right: 30px;
-    width: 380px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     background: var(--bg-nav-main);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 10000000000000000000000000000000000000;
     
     /* Animation Properties: Hidden by default */
     opacity: 0;
@@ -132,6 +132,7 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+    z-index: 999999999999999999999999999999999999;
 }
 
 /* Clean Message Balloon Layouts */
